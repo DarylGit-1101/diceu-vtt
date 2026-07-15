@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://csv4xcb3dq3ne"]
 
+[ext_resource type="Script" uid="uid://bs0sg27sp8pbj" path="res://scenes/game_ui.gd" id="1_6rmj2"]
 [ext_resource type="Texture2D" uid="uid://5m4uuwj1alf7" path="res://assets/interaction tools button/select_normal.png" id="1_gdt2y"]
 [ext_resource type="Texture2D" uid="uid://ccv5wbkfpkt6i" path="res://assets/interaction tools button/select_pressed.png" id="2_wm3ai"]
 [ext_resource type="Texture2D" uid="uid://dysjoj434np0m" path="res://assets/interaction tools button/measure_normal.png" id="3_8dubc"]
@@ -9,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://bkhmlcsctudrd" path="res://assets/interaction tools button/measure_hover.png" id="6_vdcm2"]
 [ext_resource type="Texture2D" uid="uid://bo0lv3mb7p1f2" path="res://assets/interaction tools button/ping_pressed.png" id="8_6rmj2"]
 [ext_resource type="Texture2D" uid="uid://c0jytlmrrcs83" path="res://assets/interaction tools button/ping_hover.png" id="9_vsj0x"]
+[ext_resource type="Texture2D" uid="uid://dcejgotstfsy7" path="res://assets/interaction tools button/initiative_pressed.png" id="10_7dvkv"]
+[ext_resource type="PackedScene" uid="uid://hu6yx8eadjoq" path="res://scenes/battle_tracker.tscn" id="11_vdcm2"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xlq6p"]
 texture = ExtResource("1_gdt2y")
@@ -37,6 +40,21 @@ texture = ExtResource("5_7dvkv")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vsj0x"]
 texture = ExtResource("6_vdcm2")
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vdcm2"]
+load_path = "res://.godot/imported/initiative_normal.png-bac77d8002f8230d88a335e672cfc858.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6rmj2"]
+texture = SubResource("CompressedTexture2D_vdcm2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qsv74"]
+texture = ExtResource("10_7dvkv")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_h1mc3"]
+load_path = "res://.godot/imported/initiative_hover.png-cb768027cecc70b34e23337a1d6729e6.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cof4p"]
+texture = SubResource("CompressedTexture2D_h1mc3")
+
 [node name="UI" type="Control" unique_id=1834205918]
 layout_mode = 3
 anchors_preset = 15
@@ -44,6 +62,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_6rmj2")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=938825066]
 layout_mode = 0
@@ -77,9 +96,22 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_vsj0x")
 [node name="InitiativeButton" type="Button" parent="VBoxContainer/InteractionTools" unique_id=600036956]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxTexture_8dubc")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_p7vwb")
-theme_override_styles/hover = SubResource("StyleBoxTexture_vsj0x")
+theme_override_styles/normal = SubResource("StyleBoxTexture_6rmj2")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qsv74")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cof4p")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=1439692152]
 layout_mode = 2
+
+[node name="BattleTracker" parent="." unique_id=1282527402 instance=ExtResource("11_vdcm2")]
+visible = false
+layout_mode = 0
+offset_left = 104.0
+offset_top = 300.0
+offset_right = 488.0
+offset_bottom = 876.0
+
+[connection signal="pressed" from="VBoxContainer/InteractionTools/SelectButton" to="." method="_on_select_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/InteractionTools/PingButton" to="." method="_on_ping_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/InteractionTools/MeasureButton" to="." method="_on_measure_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/InteractionTools/InitiativeButton" to="." method="_on_initiative_button_pressed"]

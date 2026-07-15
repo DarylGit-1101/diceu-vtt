@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 NetworkHandler="*uid://bg03e1jawe4an"
+GameState="*uid://bb8ckvqjcnloa"
 
 [display]
 
