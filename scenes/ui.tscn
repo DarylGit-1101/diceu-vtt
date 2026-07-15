@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://csv4xcb3dq3ne"]
+
+[ext_resource type="Texture2D" uid="uid://5m4uuwj1alf7" path="res://assets/interaction tools button/select_normal.png" id="1_gdt2y"]
+[ext_resource type="Texture2D" uid="uid://ccv5wbkfpkt6i" path="res://assets/interaction tools button/select_pressed.png" id="2_wm3ai"]
+[ext_resource type="Texture2D" uid="uid://dysjoj434np0m" path="res://assets/interaction tools button/measure_normal.png" id="3_8dubc"]
+[ext_resource type="Texture2D" uid="uid://p6i8v4o2uq0h" path="res://assets/interaction tools button/select_hover.png" id="3_cgfq5"]
+[ext_resource type="Texture2D" uid="uid://cxwe8j6xpchcj" path="res://assets/interaction tools button/ping_normal.png" id="4_p7vwb"]
+[ext_resource type="Texture2D" uid="uid://dxlfrt2p0yo8g" path="res://assets/interaction tools button/measure_pressed.png" id="5_7dvkv"]
+[ext_resource type="Texture2D" uid="uid://bkhmlcsctudrd" path="res://assets/interaction tools button/measure_hover.png" id="6_vdcm2"]
+[ext_resource type="Texture2D" uid="uid://bo0lv3mb7p1f2" path="res://assets/interaction tools button/ping_pressed.png" id="8_6rmj2"]
+[ext_resource type="Texture2D" uid="uid://c0jytlmrrcs83" path="res://assets/interaction tools button/ping_hover.png" id="9_vsj0x"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xlq6p"]
+texture = ExtResource("1_gdt2y")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nt7q6"]
+texture = ExtResource("2_wm3ai")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x4jx1"]
+texture = ExtResource("3_cgfq5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yev5y"]
+texture = ExtResource("4_p7vwb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gdt2y"]
+texture = ExtResource("8_6rmj2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wm3ai"]
+texture = ExtResource("9_vsj0x")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8dubc"]
+texture = ExtResource("3_8dubc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p7vwb"]
+texture = ExtResource("5_7dvkv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vsj0x"]
+texture = ExtResource("6_vdcm2")
+
+[node name="UI" type="Control" unique_id=1834205918]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=938825066]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="InteractionTools" type="VBoxContainer" parent="VBoxContainer" unique_id=1183995713]
+layout_mode = 2
+
+[node name="SelectButton" type="Button" parent="VBoxContainer/InteractionTools" unique_id=1976705208]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_xlq6p")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nt7q6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_x4jx1")
+
+[node name="PingButton" type="Button" parent="VBoxContainer/InteractionTools" unique_id=2040312189]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_yev5y")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gdt2y")
+theme_override_styles/hover = SubResource("StyleBoxTexture_wm3ai")
+
+[node name="MeasureButton" type="Button" parent="VBoxContainer/InteractionTools" unique_id=349191886]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_8dubc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_p7vwb")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vsj0x")
+
+[node name="InitiativeButton" type="Button" parent="VBoxContainer/InteractionTools" unique_id=600036956]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_8dubc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_p7vwb")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vsj0x")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=1439692152]
+layout_mode = 2

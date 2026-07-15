@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cydjw8aa1d1xv"]
+
+[ext_resource type="PackedScene" uid="uid://dtdxgdjfv0vhj" path="res://scenes/test_multiplayer.tscn" id="1_errlg"]
+[ext_resource type="Script" uid="uid://dp3sb2ja1uo1s" path="res://scenes/multiplayer_spawner.gd" id="2_bl13t"]
+[ext_resource type="PackedScene" uid="uid://bm8lg6hhsbqg2" path="res://scenes/player.tscn" id="3_iyx0m"]
+[ext_resource type="PackedScene" uid="uid://bwiemadgifg27" path="res://scenes/vtt_player.tscn" id="4_74lek"]
+[ext_resource type="PackedScene" uid="uid://csv4xcb3dq3ne" path="res://scenes/ui.tscn" id="5_j5jx5"]
+
+[node name="Test" type="Node2D" unique_id=1310665654]
+
+[node name="Test Multiplayer" parent="." unique_id=1234099723 instance=ExtResource("1_errlg")]
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=1056085771]
+_spawnable_scenes = PackedStringArray("uid://bm8lg6hhsbqg2")
+spawn_path = NodePath("..")
+script = ExtResource("2_bl13t")
+network_player = ExtResource("3_iyx0m")
+
+[node name="VTTPlayer" parent="." unique_id=25524325 instance=ExtResource("4_74lek")]
+position = Vector2(642, 354)
+
+[node name="UI" parent="." unique_id=1834205918 instance=ExtResource("5_j5jx5")]

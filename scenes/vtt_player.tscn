@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bwiemadgifg27"]
+
+[ext_resource type="Script" uid="uid://be0k3iqx2x87r" path="res://scenes/vtt_player.gd" id="1_a1vla"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_dpdjl"]
+
+[node name="VTTPlayer" type="Node2D" unique_id=25524325]
+script = ExtResource("1_a1vla")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=383577821]
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=372027389]
+replication_config = SubResource("SceneReplicationConfig_dpdjl")
