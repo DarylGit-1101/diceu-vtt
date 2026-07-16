@@ -12,6 +12,18 @@
 [ext_resource type="Texture2D" uid="uid://c0jytlmrrcs83" path="res://assets/interaction tools button/ping_hover.png" id="9_vsj0x"]
 [ext_resource type="Texture2D" uid="uid://dcejgotstfsy7" path="res://assets/interaction tools button/initiative_pressed.png" id="10_7dvkv"]
 [ext_resource type="PackedScene" uid="uid://hu6yx8eadjoq" path="res://scenes/battle_tracker.tscn" id="11_vdcm2"]
+[ext_resource type="Texture2D" uid="uid://rujcik8vwr0a" path="res://assets/interaction tools button/mapadd_normal.png" id="12_h1mc3"]
+[ext_resource type="Texture2D" uid="uid://c363hbm7k6ne8" path="res://assets/interaction tools button/mapadd_pressed.png" id="13_cof4p"]
+[ext_resource type="Texture2D" uid="uid://ch6kdnj875gwc" path="res://assets/interaction tools button/mapadd_hover.png" id="14_f7tlh"]
+[ext_resource type="Texture2D" uid="uid://ry74g12a2l8k" path="res://assets/interaction tools button/maplist_normal.png" id="15_41akx"]
+[ext_resource type="Texture2D" uid="uid://bqt7wmijoxdjb" path="res://assets/interaction tools button/maplist_pressed.png" id="16_sesyt"]
+[ext_resource type="Texture2D" uid="uid://q0r76jhp04tk" path="res://assets/interaction tools button/maplist_hover.png" id="17_gglip"]
+[ext_resource type="Texture2D" uid="uid://tpn8x6ywwnmh" path="res://assets/interaction tools button/tokenadd_normal.png" id="18_0tsab"]
+[ext_resource type="Texture2D" uid="uid://1jduo1degp0f" path="res://assets/interaction tools button/tokenadd_pressed.png" id="19_i5tog"]
+[ext_resource type="Texture2D" uid="uid://cs7jtxdpoe1xh" path="res://assets/interaction tools button/tokenadd_hover.png" id="20_rleeb"]
+[ext_resource type="Texture2D" uid="uid://cnagfvbufh5qr" path="res://assets/interaction tools button/tokenlist_normal.png" id="21_wu1et"]
+[ext_resource type="Texture2D" uid="uid://dt7xt74vj8r6o" path="res://assets/interaction tools button/tokenlist_pressed.png" id="22_wquew"]
+[ext_resource type="Texture2D" uid="uid://gn6ovjx2jody" path="res://assets/interaction tools button/tokenlist_hover.png" id="23_pawqx"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xlq6p"]
 texture = ExtResource("1_gdt2y")
@@ -55,6 +67,44 @@ load_path = "res://.godot/imported/initiative_hover.png-cb768027cecc70b34e23337a
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cof4p"]
 texture = SubResource("CompressedTexture2D_h1mc3")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jkdwc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h1mc3"]
+texture = ExtResource("12_h1mc3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f7tlh"]
+texture = ExtResource("13_cof4p")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8k7j3"]
+texture = ExtResource("14_f7tlh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rlppe"]
+texture = ExtResource("15_41akx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ycmcx"]
+texture = ExtResource("16_sesyt")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kupmu"]
+texture = ExtResource("17_gglip")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_catpy"]
+texture = ExtResource("18_0tsab")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_41akx"]
+texture = ExtResource("19_i5tog")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sesyt"]
+texture = ExtResource("20_rleeb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gglip"]
+texture = ExtResource("21_wu1et")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0tsab"]
+texture = ExtResource("22_wquew")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i5tog"]
+texture = ExtResource("23_pawqx")
+
 [node name="UI" type="Control" unique_id=1834205918]
 layout_mode = 3
 anchors_preset = 15
@@ -66,8 +116,10 @@ script = ExtResource("1_6rmj2")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=938825066]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 14.0
+offset_top = 14.0
+offset_right = 110.0
+offset_bottom = 414.0
 
 [node name="InteractionTools" type="VBoxContainer" parent="VBoxContainer" unique_id=1183995713]
 layout_mode = 2
@@ -103,15 +155,78 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_cof4p")
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=1439692152]
 layout_mode = 2
 
+[node name="AssetManager" type="PanelContainer" parent="." unique_id=2100794597]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -202.0
+offset_top = -110.0
+offset_right = 202.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_jkdwc")
+
+[node name="Columns" type="HBoxContainer" parent="AssetManager" unique_id=2020807411]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="MapSection" type="HBoxContainer" parent="AssetManager/Columns" unique_id=607295798]
+layout_mode = 2
+
+[node name="MapAdd" type="Button" parent="AssetManager/Columns/MapSection" unique_id=641249429]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_h1mc3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_f7tlh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8k7j3")
+
+[node name="MapList" type="Button" parent="AssetManager/Columns/MapSection" unique_id=1062130415]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_rlppe")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ycmcx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kupmu")
+
+[node name="VSeparator" type="VSeparator" parent="AssetManager/Columns" unique_id=374666520]
+layout_mode = 2
+
+[node name="TokenSection" type="HBoxContainer" parent="AssetManager/Columns" unique_id=889945082]
+layout_mode = 2
+
+[node name="TokenAdd" type="Button" parent="AssetManager/Columns/TokenSection" unique_id=7080205]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_catpy")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_41akx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_sesyt")
+
+[node name="TokenList" type="Button" parent="AssetManager/Columns/TokenSection" unique_id=83625669]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_gglip")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0tsab")
+theme_override_styles/hover = SubResource("StyleBoxTexture_i5tog")
+
 [node name="BattleTracker" parent="." unique_id=1282527402 instance=ExtResource("11_vdcm2")]
 visible = false
 layout_mode = 0
-offset_left = 104.0
-offset_top = 300.0
-offset_right = 488.0
-offset_bottom = 876.0
+offset_left = 120.0
+offset_top = 314.0
+offset_right = 504.0
+offset_bottom = 890.0
+
+[node name="AssetFileDialog" type="FileDialog" parent="." unique_id=1291540162]
+title = "Open File(s)"
+file_mode = 1
+access = 2
+filters = PackedStringArray("*.png, *.jpg, *.jpeg ; Supported Images")
 
 [connection signal="pressed" from="VBoxContainer/InteractionTools/SelectButton" to="." method="_on_select_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/InteractionTools/PingButton" to="." method="_on_ping_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/InteractionTools/MeasureButton" to="." method="_on_measure_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/InteractionTools/InitiativeButton" to="." method="_on_initiative_button_pressed"]
+[connection signal="file_selected" from="AssetFileDialog" to="." method="_on_asset_file_dialog_file_selected"]

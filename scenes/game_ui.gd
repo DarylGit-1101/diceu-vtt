@@ -29,3 +29,7 @@ func _on_ping_button_pressed() -> void:
 func _on_select_button_pressed() -> void:
 	GameState.active_tool = GameState.Tool.SELECT
 	print("Tool: " + str(GameState.active_tool))
+
+
+func _on_asset_file_dialog_file_selected(path: String) -> void:
+	pass # Replace with function body.
