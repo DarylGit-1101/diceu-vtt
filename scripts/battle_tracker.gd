@@ -1,6 +1,6 @@
 extends PanelContainer
 
-const INITIATIVE_CARD_SCENE = preload("res://scenes/initiative_card.tscn")
+const INITIATIVE_CARD_SCENE = preload("res://scenes/UI/initiative_card.tscn")
 
 @onready var list_container: VBoxContainer = $MarginContainer/ScrollContainer/ListContainer
 

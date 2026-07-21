@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://csv4xcb3dq3ne"]
 
-[ext_resource type="Script" uid="uid://bs0sg27sp8pbj" path="res://scenes/game_ui.gd" id="1_6rmj2"]
+[ext_resource type="Script" uid="uid://bs0sg27sp8pbj" path="res://scripts/game_ui.gd" id="1_6rmj2"]
 [ext_resource type="Texture2D" uid="uid://5m4uuwj1alf7" path="res://assets/interaction tools button/select_normal.png" id="1_gdt2y"]
 [ext_resource type="Texture2D" uid="uid://ccv5wbkfpkt6i" path="res://assets/interaction tools button/select_pressed.png" id="2_wm3ai"]
 [ext_resource type="Texture2D" uid="uid://dysjoj434np0m" path="res://assets/interaction tools button/measure_normal.png" id="3_8dubc"]
@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bo0lv3mb7p1f2" path="res://assets/interaction tools button/ping_pressed.png" id="8_6rmj2"]
 [ext_resource type="Texture2D" uid="uid://c0jytlmrrcs83" path="res://assets/interaction tools button/ping_hover.png" id="9_vsj0x"]
 [ext_resource type="Texture2D" uid="uid://dcejgotstfsy7" path="res://assets/interaction tools button/initiative_pressed.png" id="10_7dvkv"]
-[ext_resource type="PackedScene" uid="uid://hu6yx8eadjoq" path="res://scenes/battle_tracker.tscn" id="11_vdcm2"]
+[ext_resource type="PackedScene" uid="uid://hu6yx8eadjoq" path="res://scenes/UI/battle_tracker.tscn" id="11_vdcm2"]
 [ext_resource type="Texture2D" uid="uid://rujcik8vwr0a" path="res://assets/interaction tools button/mapadd_normal.png" id="12_h1mc3"]
 [ext_resource type="Texture2D" uid="uid://c363hbm7k6ne8" path="res://assets/interaction tools button/mapadd_pressed.png" id="13_cof4p"]
 [ext_resource type="Texture2D" uid="uid://ch6kdnj875gwc" path="res://assets/interaction tools button/mapadd_hover.png" id="14_f7tlh"]

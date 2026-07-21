@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dtdxgdjfv0vhj"]
 
-[ext_resource type="Script" uid="uid://dlxgb1lrwrr5p" path="res://scenes/test_multiplayer.gd" id="1_1r7ab"]
+[ext_resource type="Script" uid="uid://dlxgb1lrwrr5p" path="res://scripts/test_multiplayer.gd" id="1_1r7ab"]
 
 [node name="Test Multiplayer" type="Control" unique_id=1234099723]
 layout_mode = 3

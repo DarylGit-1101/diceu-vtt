@@ -1,0 +1,176 @@
+[gd_scene format=3 uid="uid://cwrrfffwb8ylr"]
+
+[ext_resource type="Texture2D" uid="uid://d14srh0rq387c" path="res://assets/DiceuVTT1.png" id="1_40d5v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ihnxg"]
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.208, 0.086, 0.012, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 6.0
+expand_margin_right = 6.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_asrxx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_40d5v"]
+
+[node name="HostPage" type="Control" unique_id=1115296026]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=179474251]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(3, 3)
+texture = ExtResource("1_40d5v")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect" unique_id=1422399815]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 150
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 150
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer" unique_id=1287616181]
+layout_mode = 2
+
+[node name="HeaderLabelCreate" type="Label" parent="TextureRect/MarginContainer/VBoxContainer" unique_id=1523520172]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.20784314, 0.08627451, 0.011764706, 1)
+theme_override_font_sizes/font_size = 16
+text = "Create a Campaign"
+
+[node name="NewCampaignInput" type="LineEdit" parent="TextureRect/MarginContainer/VBoxContainer" unique_id=976333293]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.20784314, 0.08627451, 0.011764706, 1)
+theme_override_colors/font_placeholder_color = Color(0.29411766, 0.13333334, 0.023529412, 0.35686275)
+theme_override_colors/caret_color = Color(0.20784314, 0.08627451, 0.011764706, 1)
+theme_override_colors/selection_color = Color(0.5019608, 0.5019608, 0.5019608, 0)
+theme_override_styles/normal = SubResource("StyleBoxFlat_ihnxg")
+theme_override_styles/read_only = SubResource("StyleBoxTexture_asrxx")
+theme_override_styles/focus = SubResource("StyleBoxTexture_40d5v")
+placeholder_text = "Campaign Name..."
+
+[node name="Control" type="Control" parent="TextureRect/MarginContainer/VBoxContainer" unique_id=1096447210]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="ListLabelCampaign" type="Label" parent="TextureRect/MarginContainer/VBoxContainer" unique_id=626279063]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.20784314, 0.08627451, 0.011764706, 1)
+text = "My Campaigns"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TextureRect/MarginContainer/VBoxContainer" unique_id=637945022]
+custom_minimum_size = Vector2(0, 175)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer/ScrollContainer" unique_id=87516543]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="TextureRect/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=839352378]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Control" unique_id=1260691560]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 16.0
+text = "hello"
+
+[node name="Control2" type="Control" parent="TextureRect/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1080401717]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Control2" unique_id=1924169773]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 16.0
+text = "hello"
+
+[node name="Control3" type="Control" parent="TextureRect/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2012751927]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Control3" unique_id=803257602]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 16.0
+text = "hello"
+
+[node name="Control4" type="Control" parent="TextureRect/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=265596655]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Control4" unique_id=2042374006]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 16.0
+text = "hello"
+
+[node name="Control5" type="Control" parent="TextureRect/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1496022559]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Control5" unique_id=1406818149]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 16.0
+text = "hello"
+
+[node name="Control6" type="Control" parent="TextureRect/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=539538732]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Control6" unique_id=1977477220]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 16.0
+text = "hello"
+
+[node name="Control7" type="Control" parent="TextureRect/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=424735246]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Control7" unique_id=1312790802]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 16.0
+text = "hello"
+
+[node name="Control8" type="Control" parent="TextureRect/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1107949892]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Control8" unique_id=1910554697]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 16.0
+text = "hello"
+
+[node name="Control9" type="Control" parent="TextureRect/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1047184532]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Control9" unique_id=1396737053]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 16.0
+text = "hello"

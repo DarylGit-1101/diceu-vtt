@@ -1,0 +1,161 @@
+[gd_scene format=3 uid="uid://c27v24bvtypso"]
+
+[ext_resource type="Script" uid="uid://0c64arwllbq5" path="res://scripts/main_menu.gd" id="1_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://nvhfk0likwbs" path="res://assets/DiceuVTT-Sheet.png" id="1_l6cm7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekxnf"]
+atlas = ExtResource("1_l6cm7")
+region = Rect2(0, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqqt6"]
+atlas = ExtResource("1_l6cm7")
+region = Rect2(640, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wu84c"]
+atlas = ExtResource("1_l6cm7")
+region = Rect2(1280, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ln24"]
+atlas = ExtResource("1_l6cm7")
+region = Rect2(1920, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtw2f"]
+atlas = ExtResource("1_l6cm7")
+region = Rect2(2560, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oa1go"]
+atlas = ExtResource("1_l6cm7")
+region = Rect2(3200, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbmy8"]
+atlas = ExtResource("1_l6cm7")
+region = Rect2(3840, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jk1qb"]
+atlas = ExtResource("1_l6cm7")
+region = Rect2(4480, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dd4i"]
+atlas = ExtResource("1_l6cm7")
+region = Rect2(5120, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgwnu"]
+atlas = ExtResource("1_l6cm7")
+region = Rect2(5760, 0, 640, 360)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f611q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ekxnf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqqt6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wu84c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ln24")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtw2f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oa1go")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbmy8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jk1qb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5dd4i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lgwnu")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f611q"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_78c8r"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ihnxg"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_phbuu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_32wex"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7evmm"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7s603"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nkiok"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_br6xs"]
+
+[node name="MainMenu" type="Control" unique_id=1170556047]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ekxnf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1072632]
+texture_filter = 1
+position = Vector2(960, 540)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_f611q")
+autoplay = "default"
+frame = 5
+frame_progress = 0.5818168
+
+[node name="Control" type="Control" parent="." unique_id=530697234]
+anchors_preset = 0
+offset_left = 216.0
+offset_top = 600.0
+offset_right = 256.0
+offset_bottom = 640.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=531681182]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Host" type="Button" parent="Control/VBoxContainer" unique_id=274100479]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 96
+theme_override_styles/normal = SubResource("StyleBoxTexture_f611q")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_78c8r")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ihnxg")
+text = "Host"
+
+[node name="Join" type="Button" parent="Control/VBoxContainer" unique_id=1465854400]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 96
+theme_override_styles/normal = SubResource("StyleBoxTexture_phbuu")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_32wex")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7evmm")
+text = "Join"
+
+[node name="Exit" type="Button" parent="Control/VBoxContainer" unique_id=1924071581]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 96
+theme_override_styles/normal = SubResource("StyleBoxTexture_7s603")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nkiok")
+theme_override_styles/hover = SubResource("StyleBoxTexture_br6xs")
+text = "Exit"
+
+[connection signal="pressed" from="Control/VBoxContainer/Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Join" to="." method="_on_join_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

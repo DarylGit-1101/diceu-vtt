@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bwiemadgifg27"]
 
-[ext_resource type="Script" uid="uid://be0k3iqx2x87r" path="res://scenes/vtt_player.gd" id="1_a1vla"]
+[ext_resource type="Script" uid="uid://be0k3iqx2x87r" path="res://scripts/vtt_player.gd" id="1_a1vla"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_dpdjl"]
 
