@@ -10,7 +10,7 @@ border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0.208, 0.086, 0.012, 1)
+border_color = Color(0.20784314, 0.08627451, 0.011764706, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -21,6 +21,74 @@ expand_margin_right = 6.0
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_asrxx"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_40d5v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_phbuu"]
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.20784314, 0.08627451, 0.011764706, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 6.0
+expand_margin_right = 6.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7s603"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nkiok"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f611q"]
+bg_color = Color(0.14509805, 0.5529412, 0.11764706, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_asrxx"]
+bg_color = Color(0.14509805, 0.5529412, 0.11764706, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_40d5v"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.14509805, 0.5529412, 0.11764706, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
 
 [node name="HostPage" type="Control" unique_id=1115296026]
 layout_mode = 3
@@ -58,7 +126,7 @@ theme_override_colors/font_color = Color(0.20784314, 0.08627451, 0.011764706, 1)
 theme_override_font_sizes/font_size = 16
 text = "Create a Campaign"
 
-[node name="NewCampaignInput" type="LineEdit" parent="TextureRect/MarginContainer/VBoxContainer" unique_id=976333293]
+[node name="NewCampaignName" type="LineEdit" parent="TextureRect/MarginContainer/VBoxContainer" unique_id=976333293]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.20784314, 0.08627451, 0.011764706, 1)
 theme_override_colors/font_placeholder_color = Color(0.29411766, 0.13333334, 0.023529412, 0.35686275)
@@ -69,8 +137,34 @@ theme_override_styles/read_only = SubResource("StyleBoxTexture_asrxx")
 theme_override_styles/focus = SubResource("StyleBoxTexture_40d5v")
 placeholder_text = "Campaign Name..."
 
+[node name="NewCampaignDescription" type="LineEdit" parent="TextureRect/MarginContainer/VBoxContainer" unique_id=1585618607]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.20784314, 0.08627451, 0.011764706, 1)
+theme_override_colors/font_placeholder_color = Color(0.29411766, 0.13333334, 0.023529412, 0.35686275)
+theme_override_colors/caret_color = Color(0.20784314, 0.08627451, 0.011764706, 1)
+theme_override_colors/selection_color = Color(0.5019608, 0.5019608, 0.5019608, 0)
+theme_override_styles/normal = SubResource("StyleBoxFlat_phbuu")
+theme_override_styles/read_only = SubResource("StyleBoxTexture_7s603")
+theme_override_styles/focus = SubResource("StyleBoxTexture_nkiok")
+placeholder_text = "Campaign Description..."
+
+[node name="Control2" type="Control" parent="TextureRect/MarginContainer/VBoxContainer" unique_id=1509990148]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+
+[node name="NewCampaignButton" type="Button" parent="TextureRect/MarginContainer/VBoxContainer" unique_id=126864507]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.14509805, 0.5529412, 0.11764706, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_f611q")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_asrxx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_40d5v")
+text = "CREATE"
+
 [node name="Control" type="Control" parent="TextureRect/MarginContainer/VBoxContainer" unique_id=1096447210]
-custom_minimum_size = Vector2(0, 20)
+custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 
 [node name="ListLabelCampaign" type="Label" parent="TextureRect/MarginContainer/VBoxContainer" unique_id=626279063]

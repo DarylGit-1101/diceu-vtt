@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://n3dagn5l5vf5"]
+
+[node name="CampaignCard" type="PanelContainer" unique_id=603268994]
+offset_right = 300.0
+offset_bottom = 50.0
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=212305882]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=487743574]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1856968946]
+layout_mode = 2
+
+[node name="CampaignTitle" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1004379550]
+custom_maximum_size = Vector2(200, 16)
+layout_mode = 2
+text = "CAMPAIGN TITLE"
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1589532609]
+custom_maximum_size = Vector2(200, 6)
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+autowrap_mode = 3
+
+[node name="LaunchButton" type="Button" parent="MarginContainer/HBoxContainer" unique_id=65149649]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="DeleteButton" type="Button" parent="MarginContainer/HBoxContainer" unique_id=1076379279]
+layout_mode = 2
+size_flags_horizontal = 8
