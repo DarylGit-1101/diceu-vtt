@@ -36,6 +36,8 @@ func initialize_base_directories() -> void:
 		print("Hosted Campaigns Path: ", ProjectSettings.globalize_path(MY_CAMPAIGNS_PATH))
 		print("Joined Campaigns Path: ", ProjectSettings.globalize_path(JOINED_CAMPAIGNS_PATH))
 		print("-------------------------------------")
+		
+		verify_and_repair_campaigns()
 	else:
 		printerr("Failed to initialize base directories! Error codes - My: ", err_my, " Joined: ", err_joined)
 
@@ -125,10 +127,83 @@ func create_new_campaign(campaign_title: String, description: String) -> void:
 		
 	print("New Campaign Created Successfully at: ", new_campaign_path)
 
+func verify_and_repair_campaigns() -> void:
+	var dir: DirAccess = DirAccess.open(MY_CAMPAIGNS_PATH)
+	if not dir:
+		return
+	
+	dir.list_dir_begin()
+	var folder_name: String = dir.get_next()
+	
+	while folder_name != "":
+		if dir.current_is_dir() and not folder_name.begins_with("."):
+			var campaign_dir_path: String = MY_CAMPAIGNS_PATH.path_join(folder_name)
+			_repair_single_campaign(campaign_dir_path, folder_name)
+		
+		folder_name = dir.get_next()
+
+func _repair_single_campaign(path: String, folder_name: String) -> void:
+	# Ensure subfolders exists
+	var subfolders: Array[String] = ["maps", "tokens", "character_sheets", "notes"]
+	for folder: String in subfolders:
+		var sub_path: String = path.path_join(folder)
+		if not DirAccess.dir_exists_absolute(sub_path):
+			DirAccess.make_dir_recursive_absolute(sub_path)
+			print("Repaired missing folders/files: ", sub_path)
+	
+	var info_path: String = path.path_join("campaign_info.json")
+	if not FileAccess.file_exists(info_path):
+		var fallback_info: Dictionary = {
+			"title": folder_name,
+			"description": "No description provided.",
+			"created_date": Time.get_date_string_from_system()
+		}
+		var file: FileAccess = FileAccess.open(info_path, FileAccess.WRITE)
+		if file:
+			file.store_string(JSON.stringify(fallback_info, "\t"))
+			file.close()
+			print("Repaired missing campaign_info.json in: ", folder_name)
+	
+	var world_path: String = path.path_join("world_state.json")
+	if not FileAccess.file_exists(world_path):
+		var fallback_world: Dictionary = {
+			"active_map": "",
+			"maps": {}
+		}
+		var file: FileAccess = FileAccess.open(world_path, FileAccess.WRITE)
+		if file:
+			file.store_string(JSON.stringify(fallback_world, "\t"))
+			file.close()
+			print("Repaired missing world_state.json in: ", folder_name)
+
+func import_map_to_campaign(source_path: String) -> String:
+	if campaign_path.is_empty():
+		printerr("Cannot import map: No active campaign loaded!")
+		return ""
+	
+	var file_name: String = source_path.get_file()
+	var destination_path: String = campaign_path.path_join("maps").path_join(file_name)
+	
+	var file_bytes: PackedByteArray = FileAccess.get_file_as_bytes(source_path)
+	if file_bytes.is_empty():
+		printerr("Failed to read image file at: ", source_path)
+		return ""
+	
+	var write_file: FileAccess = FileAccess.open(destination_path, FileAccess.WRITE)
+	if write_file:
+		write_file.store_buffer(file_bytes)
+		write_file.close()
+		print("Map saved to campaign: ", destination_path)
+		return file_name
+	
+	printerr("Failed to write map to: ", destination_path)
+	return ""
+
 # Sets the active campaign globally so the main VTT screen knows what to load
 func set_active_campaign(folder_name: String) -> void:
 	current_campaign_name = folder_name
 	campaign_path = MY_CAMPAIGNS_PATH.path_join(folder_name)
+	_repair_single_campaign(campaign_path, folder_name)
 	print("Active campaign set to: ", current_campaign_name)
 
 # Safely moves a campaign folder to the operating system's trash bin

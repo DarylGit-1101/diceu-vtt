@@ -21,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://tpn8x6ywwnmh" path="res://assets/interaction tools button/tokenadd_normal.png" id="18_0tsab"]
 [ext_resource type="Texture2D" uid="uid://1jduo1degp0f" path="res://assets/interaction tools button/tokenadd_pressed.png" id="19_i5tog"]
 [ext_resource type="Texture2D" uid="uid://cs7jtxdpoe1xh" path="res://assets/interaction tools button/tokenadd_hover.png" id="20_rleeb"]
-[ext_resource type="Texture2D" uid="uid://cnagfvbufh5qr" path="res://assets/interaction tools button/tokenlist_normal.png" id="21_wu1et"]
+[ext_resource type="Texture2D" uid="uid://8mms6bvcpund" path="res://assets/interaction tools button/tokenlist_normal.png" id="21_wu1et"]
 [ext_resource type="Texture2D" uid="uid://dt7xt74vj8r6o" path="res://assets/interaction tools button/tokenlist_pressed.png" id="22_wquew"]
 [ext_resource type="Texture2D" uid="uid://gn6ovjx2jody" path="res://assets/interaction tools button/tokenlist_hover.png" id="23_pawqx"]
 
@@ -96,7 +96,7 @@ texture = ExtResource("19_i5tog")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sesyt"]
 texture = ExtResource("20_rleeb")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gglip"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_asrxx"]
 texture = ExtResource("21_wu1et")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0tsab"]
@@ -207,7 +207,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_sesyt")
 [node name="TokenList" type="Button" parent="AssetManager/Columns/TokenSection" unique_id=83625669]
 custom_minimum_size = Vector2(96, 0)
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxTexture_gglip")
+theme_override_styles/normal = SubResource("StyleBoxTexture_asrxx")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_0tsab")
 theme_override_styles/hover = SubResource("StyleBoxTexture_i5tog")
 
@@ -229,4 +229,8 @@ filters = PackedStringArray("*.png, *.jpg, *.jpeg ; Supported Images")
 [connection signal="pressed" from="VBoxContainer/InteractionTools/PingButton" to="." method="_on_ping_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/InteractionTools/MeasureButton" to="." method="_on_measure_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/InteractionTools/InitiativeButton" to="." method="_on_initiative_button_pressed"]
+[connection signal="pressed" from="AssetManager/Columns/MapSection/MapAdd" to="." method="_on_map_add_pressed"]
+[connection signal="pressed" from="AssetManager/Columns/MapSection/MapList" to="." method="_on_map_list_pressed"]
+[connection signal="pressed" from="AssetManager/Columns/TokenSection/TokenAdd" to="." method="_on_token_add_pressed"]
+[connection signal="pressed" from="AssetManager/Columns/TokenSection/TokenList" to="." method="_on_token_list_pressed"]
 [connection signal="file_selected" from="AssetFileDialog" to="." method="_on_asset_file_dialog_file_selected"]
