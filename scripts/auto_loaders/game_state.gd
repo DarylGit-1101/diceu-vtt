@@ -84,17 +84,17 @@ func get_all_campaigns_details() -> Array[Dictionary]:
 						var json = JSON.new()
 						if json.parse(file.get_as_text()) == OK:
 							var data = json.data
-							details["titles"] = data.get("title", folder_name)
+							details["title"] = data.get("title", folder_name)
 							details["description"] = data.get("description", "No description provided.")
 						file.close()
-					campaign_list.append(details)
-				folder_name = dir.get_next()
+				campaign_list.append(details)
+			folder_name = dir.get_next()
 	return campaign_list
 
 # Helper function to create a new campaign with all subfolders and info file
 func create_new_campaign(campaign_title: String, description: String) -> void:
 	var safe_folder_name = campaign_title.validate_node_name()
-	var new_campaign_path = MY_CAMPAIGNS_PATH.path_join("safe_folder_name")
+	var new_campaign_path = MY_CAMPAIGNS_PATH.path_join(safe_folder_name)
 	
 	# Build sub-directories
 	DirAccess.make_dir_recursive_absolute(new_campaign_path.path_join("maps"))
@@ -124,3 +124,20 @@ func create_new_campaign(campaign_title: String, description: String) -> void:
 		world_file.close()
 		
 	print("New Campaign Created Successfully at: ", new_campaign_path)
+
+# Sets the active campaign globally so the main VTT screen knows what to load
+func set_active_campaign(folder_name: String) -> void:
+	current_campaign_name = folder_name
+	campaign_path = MY_CAMPAIGNS_PATH.path_join(folder_name)
+	print("Active campaign set to: ", current_campaign_name)
+
+# Safely moves a campaign folder to the operating system's trash bin
+func delete_campaign(folder_name: String) -> void:
+	var target_path: String = MY_CAMPAIGNS_PATH.path_join(folder_name)
+	var global_target: String = ProjectSettings.globalize_path(target_path)
+	
+	var err: Error = OS.move_to_trash(global_target)
+	if err == OK:
+		print("Successfully moved campaign to trash: ", folder_name)
+	else:
+		printerr("Failed to trash campaign folder. Error code: ", err)
